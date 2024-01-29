@@ -19,12 +19,21 @@ pipeline {
                 sh 'aws ec2 describe-instances'
             }
         }
-        stage('update kubeconfig') {
+         stage('docker login') {
+            steps {
+                script {
+                    withCredentials([usernamePassword(credentialsId: 'docker-hub', passwordVariable: 'manoj', usernameVariable: 'nani')]) {
+                sh 'sudo docker login --username $nani --password $manoj'
+                    }
+                }
+            }
+              }  
+        //stage('update kubeconfig') {
             steps {
             sh 'aws eks update-kubeconfig --region $AWS_DEFAULT_REGION --name eks'
             sh 'kubectl get nodes'
             sh 'kubectl delete svc nginx-service'
             }
-        }
+        }//
     }
 }
