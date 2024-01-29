@@ -23,7 +23,7 @@ pipeline {
             steps {
             sh 'aws eks update-kubeconfig --region $AWS_DEFAULT_REGION --name eks'
             sh 'kubectl get nodes'
-            sh 'kubectl delete deployment nginx-deployment'
+            sh 'kubectl delete svc nginx-service'
             }
         }
     }
