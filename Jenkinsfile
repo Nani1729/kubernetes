@@ -28,12 +28,11 @@ pipeline {
                 }
             }
               }  
-        //stage('update kubeconfig') {
+        stage('update kubeconfig') {
             steps {
             sh 'aws eks update-kubeconfig --region $AWS_DEFAULT_REGION --name eks'
             sh 'kubectl get nodes'
-            sh 'kubectl delete svc nginx-service'
             }
-        }//
+        }
     }
 }
