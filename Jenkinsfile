@@ -32,6 +32,7 @@ pipeline {
             steps {
             sh 'aws eks update-kubeconfig --region $AWS_DEFAULT_REGION --name eks'
             sh 'kubectl get nodes'
+            sh 'kubectl apply -f nginx.yml'
             }
         }
     }
