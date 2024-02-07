@@ -16,7 +16,7 @@ spec:
       - name: nginx
         image: manojreddy12/docker:v2.8
         ports:
-        - containerPort: 80
+        - containerPort: 8080
 
 ---
 apiVersion: v1
@@ -29,5 +29,5 @@ spec:
     app: tomcat
   ports:
   - protocol: TCP
-    port: 80
-    targetPort: 80
+    port: 8080
+    targetPort: 8080
