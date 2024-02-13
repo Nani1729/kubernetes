@@ -12,9 +12,16 @@ spec:
       labels:
         app: tomcat
     spec:
+      volumes:
+        - name: tomcat-data
+          persistentVolumeClaim:
+            claimName: my-pvc
       containers:
       - name: nginx
         image: manojreddy12/newrepo:v2.0
+        volumeMounts:
+          - name: tomcat-data
+            mountPath: /usr/local/tomcat
         ports:
         - containerPort: 8080
 
