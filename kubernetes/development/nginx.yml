@@ -29,4 +29,5 @@ spec:
     app: tomcat
   ports:
   - protocol: TCP
+    port: 32500
     targetPort: 8080
