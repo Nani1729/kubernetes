@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
       - name: nginx
-        image: manojreddy12/docker:v2.8
+        image: manojreddy12/newrepo:v2.0
         ports:
         - containerPort: 8080
 
