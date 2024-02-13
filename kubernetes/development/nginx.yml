@@ -24,10 +24,10 @@ kind: Service
 metadata:
   name: tomcat-service
 spec:
-  type: LoadBalancer
+  type: NodePort
   selector:
     app: tomcat
   ports:
   - protocol: TCP
-    port: 8080
+    port: 32600
     targetPort: 8080
